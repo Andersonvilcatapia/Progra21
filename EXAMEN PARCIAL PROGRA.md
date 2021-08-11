@@ -1,0 +1,96 @@
+---
+title: "EXAMEN PARCIAL"
+author: "ANDERSON VILCA TAPIA"
+date: "24/7/2021"
+output: github_document
+---
+
+
+# EXAMEN PARCIAL
+
+
+# PARTE 1-DESARROLLO
+
+## EJERCICIO 1
+```{r}
+# Secuencia de x  su intervalo
+
+x = seq(-10, 10 , 0.5)
+
+f <- (((exp(2)^x)-1)/((exp(2)^x)+1))
+
+plot (x,f,"l")
+
+```
+
+## EJERCICIO 2
+```{r}
+ecuacionderegresion<-function(v_1,v_2){
+         Xa<-c()
+         Yb<-c()
+         for(i in 1:length(v_1)){
+         x<-log10(v_1[i])
+         y<-log10(v_2[i])
+         Xa<-c(Xa,x)
+         Yb<-c(Yb,y)
+  }
+  producto<- Xa*Yb
+  Xaelevadoalcuadrado<-Xa^2
+  n<-length(v_1)
+  T<-((n*sum(producto))-(sum(Xa)*sum(Yb)))/((n*sum(Xaelevadoalcuadrado))-(sum(Xa))^2)
+  H<-10^(mean(Yb)-T*mean(Xa))
+  return(c(H,T))
+}
+x<-c(2.5,3,4,5,5.5,6,7)
+y<-c(12.5,10,7,4.5,4,3,3.5)
+ecuacionderegresion(x,y)
+```
+
+
+## EJERCICIO 3
+
+```{r}
+
+function(l1, l2) l1*l2/2
+Area_triangulo <- function(l1, l2) l1*l2/2
+Area_triangulo( 10 ,9 )
+
+# ya tenemos la funcion y poniendo como ejemplo valores como 2 y 9 nos resulta el area 9 asi que nusetra funcion esta correcta
+
+Perimetro_triangulo <- function(l1 , l2) l1 + l2 + (l1^2 + l2^2)^(1/2)
+#ejemplo
+Perimetro_triangulo(3 , 4)
+#Como vemos las funciones son correctas  y cumplen con las condiciones
+```
+
+## EJERCICIO 4
+```{r}
+function(L, CN , S)      (0.0136*(L^(0.8))*(((1000/CN)-9)^(0.7)))/S^(0.5)
+
+Tiempodeconcentracion <-function(L, CN , S)      (0.0136*(L^(0.8))*(((1000/CN)-9)^(0.7)))/S^(0.5)
+
+# Ahora que tenemos la funcion , la probamos
+
+Tiempodeconcentracion( 10 , 20 , 100 )
+
+# La funcion esta correcta
+```
+
+
+## EJERCICIO 5 
+```{r}
+
+matrix(c(2,5,1,1,-4,-1,3,1,-4), ncol=3,nrow=3)
+
+M= matrix(c(2,5,1,1,-4,-1,3,1,-4), ncol=3,nrow=3)
+
+S= c(7,-19,4)
+
+solve(M, S)
+
+```
+ 
+# PARTE 2-DESARROLLO
+ ```{r}
+ 
+ 
